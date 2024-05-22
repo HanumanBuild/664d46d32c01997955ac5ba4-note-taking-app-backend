@@ -7,4 +7,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const authRoutes = require("./routes/authRoutes");
+const noteRoutes = require("./routes/noteRoutes");
+
+app.use("/auth", authRoutes);
+app.use("/notes", noteRoutes);
+
 module.exports = app;
